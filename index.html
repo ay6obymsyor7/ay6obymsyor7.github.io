@@ -1,0 +1,1781 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日吃瓜_官方品牌站,轻松看懂热点背后</title>
+<meta name="description" content="每日吃瓜官方网站，以原创视频与深度解读呈现热点背后的真实故事，汇聚创作者、专题企划与社区讨论，打造值得信赖的内容平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23191a1f'/%3E%3Ccircle cx='32' cy='34' r='16' fill='%23ff5c5c'/%3E%3Cpath d='M26 12h12l4 8H22z' fill='%234caf50'/%3E%3Ccircle cx='26' cy='31' r='2.4' fill='%23191a1f'/%3E%3Ccircle cx='38' cy='31' r='2.4' fill='%23191a1f'/%3E%3Cpath d='M25 40q7 6 14 0' stroke='%23191a1f' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --gx-ink:#1b1c21;
+  --gx-ink-soft:#2b2d34;
+  --gx-paper:#f7f5f2;
+  --gx-white:#ffffff;
+  --gx-red:#e8453c;
+  --gx-red-deep:#c22e27;
+  --gx-green:#2f7d4f;
+  --gx-amber:#f2b23e;
+  --gx-line:#e3ded7;
+  --gx-mute:#6d6a66;
+  --gx-radius:16px;
+  --gx-shadow:0 12px 34px rgba(27,28,33,.10);
+  --gx-shadow-sm:0 4px 14px rgba(27,28,33,.08);
+  --gx-pad:clamp(18px,4vw,48px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;
+  color:var(--gx-ink);
+  background:var(--gx-paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:800;letter-spacing:.2px;}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 14px;padding-left:22px;}
+section{scroll-margin-top:126px;}
+
+/* ===== 吸顶：公告条 + 页头 ===== */
+.gx-stickwrap{
+  position:sticky;
+  top:0;
+  z-index:90;
+}
+.gx-notice{
+  background:linear-gradient(90deg,var(--gx-ink) 0%,#3a2a2a 55%,#5b2420 100%);
+  color:#ffe9e6;
+  font-size:13.5px;
+  letter-spacing:.3px;
+}
+.gx-notice-inner{
+  max-width:1280px;
+  margin:0 auto;
+  padding:8px var(--gx-pad);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  overflow:hidden;
+}
+.gx-notice-tag{
+  flex:none;
+  background:var(--gx-red);
+  color:#fff;
+  font-size:11.5px;
+  font-weight:800;
+  padding:2px 9px;
+  border-radius:999px;
+  letter-spacing:1px;
+}
+.gx-notice-track{
+  display:flex;
+  gap:44px;
+  white-space:nowrap;
+  animation:gx-marquee 30s linear infinite;
+}
+.gx-notice-track span{opacity:.94;}
+.gx-notice-track b{color:var(--gx-amber);font-weight:700;}
+@keyframes gx-marquee{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.gx-notice:hover .gx-notice-track{animation-play-state:paused;}
+
+.gx-header{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--gx-line);
+  box-shadow:0 6px 20px rgba(27,28,33,.05);
+}
+.gx-header-inner{
+  max-width:1280px;
+  margin:0 auto;
+  padding:12px var(--gx-pad);
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.gx-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:none;
+}
+.gx-logo-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#ff7a6e,var(--gx-red) 60%,var(--gx-red-deep));
+  display:grid;place-items:center;
+  color:#fff;font-weight:900;font-size:19px;
+  box-shadow:0 6px 14px rgba(232,69,60,.35);
+}
+.gx-logo-text{display:flex;flex-direction:column;line-height:1.15;}
+.gx-logo-text strong{font-size:19px;letter-spacing:1px;}
+.gx-logo-text em{font-style:normal;font-size:11px;color:var(--gx-mute);letter-spacing:3px;}
+.gx-nav{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  margin-left:6px;
+  flex-wrap:wrap;
+}
+.gx-nav a{
+  padding:8px 12px;
+  border-radius:9px;
+  font-size:14.5px;
+  font-weight:600;
+  color:#3d3a37;
+  transition:.22s;
+}
+.gx-nav a:hover{background:#f3eeea;color:var(--gx-red-deep);}
+.gx-header-tools{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.gx-search{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.gx-search input{
+  width:196px;
+  padding:9px 34px 9px 14px;
+  border:1px solid var(--gx-line);
+  border-radius:999px;
+  background:#fbf9f7;
+  font-size:13.5px;
+  color:var(--gx-ink);
+  outline:none;
+  transition:.25s;
+}
+.gx-search input:focus{
+  width:236px;
+  border-color:var(--gx-red);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(232,69,60,.13);
+}
+.gx-search button{
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;
+  color:var(--gx-mute);
+}
+.gx-search button:hover{color:var(--gx-red);}
+.gx-search-hint{
+  position:absolute;
+  top:calc(100% + 8px);
+  right:0;
+  width:262px;
+  background:#fff;
+  border:1px solid var(--gx-line);
+  border-radius:12px;
+  box-shadow:var(--gx-shadow);
+  padding:10px;
+  font-size:13px;
+  display:none;
+  z-index:120;
+}
+.gx-search-hint.is-open{display:block;}
+.gx-search-hint p{margin:0 0 6px;color:var(--gx-mute);font-size:12px;}
+.gx-search-hint a{
+  display:block;padding:6px 8px;border-radius:8px;color:#3d3a37;
+}
+.gx-search-hint a:hover{background:#fdf0ee;color:var(--gx-red-deep);}
+.gx-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:999px;
+  font-size:14px;font-weight:700;
+  transition:.22s;
+  white-space:nowrap;
+}
+.gx-btn-primary{background:var(--gx-red);color:#fff;box-shadow:0 6px 16px rgba(232,69,60,.32);}
+.gx-btn-primary:hover{background:var(--gx-red-deep);transform:translateY(-1px);}
+.gx-btn-ghost{border:1px solid var(--gx-ink);color:var(--gx-ink);}
+.gx-btn-ghost:hover{background:var(--gx-ink);color:#fff;}
+.gx-btn-light{background:#fff;color:var(--gx-ink);border:1px solid var(--gx-line);}
+.gx-btn-light:hover{border-color:var(--gx-red);color:var(--gx-red-deep);}
+.gx-burger{
+  display:none;
+  width:42px;height:42px;border-radius:10px;
+  border:1px solid var(--gx-line);
+  background:#fff;
+  place-items:center;
+}
+.gx-burger span{
+  display:block;width:19px;height:2px;background:var(--gx-ink);
+  margin:2.6px 0;border-radius:2px;transition:.25s;
+}
+.gx-mobile-panel{
+  display:none;
+  border-top:1px solid var(--gx-line);
+  background:#fff;
+  padding:8px var(--gx-pad) 18px;
+}
+.gx-mobile-panel.is-open{display:block;}
+.gx-mobile-panel a{
+  display:block;padding:11px 4px;border-bottom:1px dashed #eee7e1;
+  font-weight:600;font-size:15px;
+}
+.gx-mobile-panel a:last-child{border-bottom:none;}
+
+/* ===== 通用容器 ===== */
+.gx-wrap{max-width:1280px;margin:0 auto;padding:0 var(--gx-pad);}
+.gx-section{padding:clamp(44px,6vw,74px) 0;}
+.gx-section-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+.gx-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:800;letter-spacing:2.4px;
+  color:var(--gx-red-deep);
+  text-transform:uppercase;
+}
+.gx-eyebrow::before{
+  content:"";width:22px;height:2px;background:var(--gx-red);border-radius:2px;
+}
+.gx-h2{
+  font-size:clamp(24px,3.2vw,34px);
+  margin-top:8px;
+  letter-spacing:.4px;
+}
+.gx-lead{color:var(--gx-mute);font-size:14.5px;max-width:560px;margin:0;}
+.gx-divider{height:1px;background:var(--gx-line);border:none;margin:0;}
+
+/* ===== 首屏 ===== */
+.gx-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(760px 420px at 88% 10%,rgba(232,69,60,.14),transparent 65%),
+    radial-gradient(560px 380px at 4% 92%,rgba(47,125,79,.12),transparent 62%),
+    linear-gradient(180deg,#fffdfb 0%,var(--gx-paper) 100%);
+  border-bottom:1px solid var(--gx-line);
+}
+.gx-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:clamp(24px,4vw,54px);
+  align-items:center;
+  padding:clamp(36px,5vw,64px) 0 clamp(40px,5vw,64px);
+}
+.gx-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--gx-line);
+  padding:6px 14px;border-radius:999px;
+  font-size:12.5px;font-weight:700;color:var(--gx-ink-soft);
+  box-shadow:var(--gx-shadow-sm);
+}
+.gx-hero-badge i{
+  width:7px;height:7px;border-radius:50%;background:var(--gx-green);
+  box-shadow:0 0 0 3px rgba(47,125,79,.18);
+}
+.gx-hero h1{
+  font-size:clamp(40px,6.4vw,74px);
+  letter-spacing:2px;
+  margin:16px 0 8px;
+  line-height:1.05;
+}
+.gx-hero h1 span{
+  background:linear-gradient(120deg,var(--gx-red) 10%,#b02a22 70%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.gx-hero-tag{
+  font-size:clamp(16px,1.9vw,20px);
+  font-weight:700;color:var(--gx-ink-soft);
+  margin-bottom:16px;
+}
+.gx-hero-desc{
+  color:#54514d;
+  font-size:15px;
+  max-width:560px;
+}
+.gx-hero-actions{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;
+}
+.gx-hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:30px;
+  max-width:520px;
+}
+.gx-stat{
+  background:#fff;border:1px solid var(--gx-line);
+  border-radius:14px;padding:14px 16px;
+  box-shadow:var(--gx-shadow-sm);
+}
+.gx-stat b{
+  display:block;font-size:clamp(20px,2.4vw,26px);
+  color:var(--gx-red-deep);letter-spacing:.5px;
+}
+.gx-stat small{color:var(--gx-mute);font-size:12.5px;}
+
+.gx-hero-visual{
+  position:relative;
+}
+.gx-hero-frame{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 26px 60px rgba(27,28,33,.20);
+  border:6px solid #fff;
+  background:#1b1c21;
+  aspect-ratio:4/3.1;
+}
+.gx-hero-frame img{width:100%;height:100%;object-fit:cover;}
+.gx-hero-float{
+  position:absolute;
+  left:-16px;bottom:22px;
+  background:#fff;
+  border-radius:14px;
+  padding:12px 16px;
+  box-shadow:var(--gx-shadow);
+  display:flex;align-items:center;gap:11px;
+  max-width:280px;
+  animation:gx-floaty 5.5s ease-in-out infinite;
+}
+@keyframes gx-floaty{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-9px);}
+}
+.gx-hero-float .gx-dot{
+  width:34px;height:34px;border-radius:50%;flex:none;
+  background:conic-gradient(var(--gx-red) 0 68%,#f4d3cf 68% 100%);
+  display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800;
+}
+.gx-hero-float strong{display:block;font-size:13.5px;}
+.gx-hero-float small{color:var(--gx-mute);font-size:11.5px;}
+
+/* ===== 关键词解析长文 ===== */
+.gx-about{
+  background:#fff;
+  border-bottom:1px solid var(--gx-line);
+}
+.gx-about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:clamp(24px,4vw,52px);
+  align-items:start;
+}
+.gx-about h2{font-size:clamp(24px,3vw,32px);margin:8px 0 16px;}
+.gx-about-side{
+  background:linear-gradient(160deg,#fff6f3,#ffffff 70%);
+  border:1px solid #f2e2dd;
+  border-radius:var(--gx-radius);
+  padding:22px;
+  position:sticky;
+  top:140px;
+}
+.gx-about-side h3{font-size:16px;margin-bottom:12px;}
+.gx-side-list{list-style:none;padding:0;margin:0;}
+.gx-side-list li{
+  display:flex;gap:10px;padding:9px 0;
+  border-bottom:1px dashed #f0e2dd;
+  font-size:13.5px;color:#4a4744;
+}
+.gx-side-list li:last-child{border-bottom:none;}
+.gx-side-list b{
+  flex:none;color:var(--gx-red-deep);font-size:12px;
+  background:#ffeceb;border-radius:6px;padding:1px 8px;height:fit-content;
+}
+.gx-about-body p{font-size:14.8px;color:#494642;}
+.gx-about-body h3{
+  font-size:17.5px;margin:22px 0 8px;color:var(--gx-ink);
+  padding-left:12px;border-left:4px solid var(--gx-red);line-height:1.4;
+}
+.gx-about-body strong{color:var(--gx-red-deep);}
+
+/* ===== 焦点视频 ===== */
+.gx-focus{
+  background:var(--gx-paper);
+}
+.gx-focus-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:20px;
+}
+.gx-focus-main{
+  position:relative;
+  border-radius:var(--gx-radius);
+  overflow:hidden;
+  box-shadow:var(--gx-shadow);
+  background:var(--gx-ink);
+}
+.gx-focus-main img{width:100%;aspect-ratio:16/9.6;object-fit:cover;transition:.5s;}
+.gx-focus-main:hover img{transform:scale(1.045);}
+.gx-focus-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,15,18,0) 32%,rgba(15,15,18,.86) 100%);
+}
+.gx-focus-info{
+  position:absolute;left:0;right:0;bottom:0;padding:22px;
+  color:#fff;
+}
+.gx-tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.gx-tag{
+  font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;
+  background:rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(4px);
+  letter-spacing:.4px;
+}
+.gx-tag-red{background:var(--gx-red);}
+.gx-tag-green{background:rgba(47,125,79,.9);}
+.gx-tag-amber{background:rgba(242,178,62,.92);color:#3a2a00;}
+.gx-focus-info h3{font-size:clamp(17px,2.1vw,22px);margin-bottom:6px;}
+.gx-focus-info p{font-size:13px;color:#ded9d4;margin:0 0 10px;}
+.gx-meta{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#cfcac5;
+}
+.gx-focus-side{
+  display:grid;
+  grid-template-rows:repeat(2,1fr);
+  gap:20px;
+}
+.gx-mini{
+  position:relative;border-radius:var(--gx-radius);overflow:hidden;
+  box-shadow:var(--gx-shadow-sm);
+  background:#1b1c21;
+}
+.gx-mini img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/7.4;transition:.5s;}
+.gx-mini:hover img{transform:scale(1.05);}
+.gx-mini-info{
+  position:absolute;inset:auto 0 0 0;padding:14px 16px;
+  background:linear-gradient(180deg,rgba(15,15,18,0),rgba(15,15,18,.88));
+  color:#fff;
+}
+.gx-mini-info h4{font-size:14.5px;margin-bottom:4px;}
+.gx-mini-info small{font-size:11.5px;color:#d3cec9;}
+
+/* ===== 视频流 ===== */
+.gx-stream{background:#fff;}
+.gx-filterbar{
+  display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px;
+}
+.gx-chip{
+  font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;
+  border:1px solid var(--gx-line);background:#fbf9f7;color:#4a4744;
+  transition:.2s;
+}
+.gx-chip:hover{border-color:var(--gx-red);color:var(--gx-red-deep);}
+.gx-chip.is-active{background:var(--gx-ink);color:#fff;border-color:var(--gx-ink);}
+.gx-cardgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.gx-card{
+  background:#fff;border:1px solid var(--gx-line);border-radius:var(--gx-radius);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:.28s;
+  box-shadow:0 2px 8px rgba(27,28,33,.04);
+}
+.gx-card:hover{transform:translateY(-5px);box-shadow:var(--gx-shadow);border-color:#f0d9d5;}
+.gx-card[data-hidden="1"]{display:none;}
+.gx-cover{
+  position:relative;overflow:hidden;
+}
+.gx-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.5s;}
+.gx-card:hover .gx-cover img{transform:scale(1.06);}
+.gx-cover .gx-play{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+.gx-play i{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.9);
+  display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transform:scale(.92);transition:.25s;
+}
+.gx-card:hover .gx-play i{transform:scale(1);background:#fff;}
+.gx-play i::after{
+  content:"";border-style:solid;border-width:8px 0 8px 13px;
+  border-color:transparent transparent transparent var(--gx-ink);
+  margin-left:3px;
+}
+.gx-cover .gx-dur{
+  position:absolute;right:10px;bottom:10px;
+  background:rgba(15,15,18,.8);color:#fff;
+  font-size:11px;padding:2px 8px;border-radius:6px;
+  letter-spacing:.5px;
+}
+.gx-cover .gx-corner{
+  position:absolute;left:10px;top:10px;
+  font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;
+  background:var(--gx-red);color:#fff;letter-spacing:.4px;
+}
+.gx-card-body{padding:15px 16px 16px;display:flex;flex-direction:column;flex:1;}
+.gx-card-body h3{font-size:15.5px;margin-bottom:7px;}
+.gx-card-body p{
+  font-size:13px;color:var(--gx-mute);margin:0 0 10px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.gx-card-foot{
+  margin-top:auto;display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--gx-mute);
+  padding-top:10px;border-top:1px dashed #efe9e4;
+}
+.gx-avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:grid;place-items:center;color:#fff;font-size:11.5px;font-weight:800;
+}
+.gx-a1{background:linear-gradient(135deg,#e8453c,#93241e);}
+.gx-a2{background:linear-gradient(135deg,#2f7d4f,#1d5533);}
+.gx-a3{background:linear-gradient(135deg,#3f6fb5,#264271);}
+.gx-a4{background:linear-gradient(135deg,#c98a1f,#8a5a0b);}
+.gx-a5{background:linear-gradient(135deg,#7a5bb5,#4a3080);}
+.gx-a6{background:linear-gradient(135deg,#b5457f,#7a2455);}
+.gx-actions{
+  margin-left:auto;display:flex;gap:4px;
+}
+.gx-icobtn{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:12px;color:var(--gx-mute);
+  padding:3px 7px;border-radius:7px;transition:.2s;
+}
+.gx-icobtn:hover{background:#fdf0ee;color:var(--gx-red-deep);}
+.gx-icobtn.is-on{color:var(--gx-red);font-weight:800;}
+.gx-icobtn svg{width:14px;height:14px;}
+
+/* ===== 专题 ===== */
+.gx-special{background:var(--gx-paper);}
+.gx-special-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.gx-special-card{
+  position:relative;border-radius:var(--gx-radius);overflow:hidden;
+  background:var(--gx-ink);color:#fff;
+  box-shadow:var(--gx-shadow-sm);
+  transition:.28s;
+}
+.gx-special-card:hover{transform:translateY(-4px);box-shadow:var(--gx-shadow);}
+.gx-special-card img{width:100%;aspect-ratio:3/3.4;object-fit:cover;opacity:.86;transition:.5s;}
+.gx-special-card:hover img{opacity:1;transform:scale(1.05);}
+.gx-special-body{
+  position:absolute;inset:auto 0 0 0;padding:16px;
+  background:linear-gradient(180deg,rgba(15,15,18,0),rgba(15,15,18,.92));
+}
+.gx-special-body h3{font-size:15px;margin-bottom:6px;}
+.gx-special-body p{font-size:12.5px;color:#d3cec9;margin:0 0 8px;}
+.gx-special-state{
+  display:inline-block;font-size:11px;font-weight:700;
+  padding:2px 9px;border-radius:999px;
+  background:rgba(242,178,62,.9);color:#3a2a00;
+}
+.gx-special-state.is-done{background:rgba(47,125,79,.92);color:#fff;}
+
+/* ===== 创作者 ===== */
+.gx-creators{background:#fff;}
+.gx-creator-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+}
+.gx-creator{
+  border:1px solid var(--gx-line);border-radius:14px;
+  padding:18px 14px;text-align:center;
+  background:#fff;transition:.26s;
+}
+.gx-creator:hover{box-shadow:var(--gx-shadow);transform:translateY(-4px);border-color:#f0d9d5;}
+.gx-creator .gx-bigavatar{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 10px;
+  display:grid;place-items:center;color:#fff;font-size:22px;font-weight:900;
+  letter-spacing:1px;
+}
+.gx-creator h3{font-size:15px;margin-bottom:3px;}
+.gx-creator .gx-field{font-size:11.5px;color:var(--gx-red-deep);font-weight:700;margin-bottom:8px;}
+.gx-creator p{font-size:12.5px;color:var(--gx-mute);margin:0 0 10px;line-height:1.6;}
+.gx-creator-data{
+  display:flex;justify-content:center;gap:14px;
+  font-size:11.5px;color:var(--gx-mute);
+  border-top:1px dashed #efe9e4;padding-top:9px;
+}
+.gx-creator-data b{display:block;color:var(--gx-ink);font-size:13.5px;}
+.gx-creator .gx-btn{width:100%;justify-content:center;margin-top:10px;padding:7px 10px;font-size:12.5px;}
+
+/* ===== 榜单 + 随笔 ===== */
+.gx-mixed{background:var(--gx-paper);}
+.gx-mixed-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:start;
+}
+.gx-rank{
+  background:#fff;border:1px solid var(--gx-line);border-radius:var(--gx-radius);
+  padding:20px;box-shadow:var(--gx-shadow-sm);
+}
+.gx-rank h3{font-size:16.5px;margin-bottom:12px;}
+.gx-rank-list{list-style:none;padding:0;margin:0;}
+.gx-rank-list li{
+  display:flex;align-items:center;gap:11px;
+  padding:10px 0;border-bottom:1px dashed #efe9e4;font-size:13.5px;
+}
+.gx-rank-list li:last-child{border-bottom:none;}
+.gx-rank-no{
+  width:23px;height:23px;border-radius:7px;flex:none;
+  display:grid;place-items:center;font-size:12px;font-weight:900;
+  background:#f2eeea;color:#5c5852;
+}
+.gx-rank-list li:nth-child(1) .gx-rank-no{background:var(--gx-red);color:#fff;}
+.gx-rank-list li:nth-child(2) .gx-rank-no{background:#f4a58f;color:#fff;}
+.gx-rank-list li:nth-child(3) .gx-rank-no{background:#f2b23e;color:#3a2a00;}
+.gx-rank-list .gx-rank-title{flex:1;}
+.gx-rank-list small{color:var(--gx-mute);font-size:11.5px;}
+.gx-notes{display:grid;gap:14px;}
+.gx-note{
+  background:#fff;border:1px solid var(--gx-line);border-radius:14px;
+  padding:18px 20px;position:relative;
+  transition:.24s;
+}
+.gx-note:hover{box-shadow:var(--gx-shadow-sm);transform:translateX(3px);}
+.gx-note h3{font-size:15.5px;margin-bottom:6px;}
+.gx-note p{font-size:13.5px;color:#54514d;margin:0 0 10px;}
+.gx-note-meta{font-size:11.5px;color:var(--gx-mute);display:flex;gap:12px;flex-wrap:wrap;}
+.gx-note::before{
+  content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;
+  border-radius:3px;background:var(--gx-amber);
+}
+.gx-note:nth-child(2)::before{background:var(--gx-green);}
+.gx-note:nth-child(3)::before{background:var(--gx-red);}
+
+/* ===== 评价 ===== */
+.gx-voices{background:#fff;}
+.gx-voice-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.gx-voice{
+  background:#fbf9f7;border:1px solid var(--gx-line);
+  border-radius:14px;padding:18px;position:relative;
+}
+.gx-voice:nth-child(2){background:#fdf0ee;border-color:#f6ded9;}
+.gx-voice:nth-child(5){background:#eef5f0;border-color:#dbe8e0;}
+.gx-voice p{font-size:13.5px;color:#494642;margin:0 0 12px;}
+.gx-voice-who{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--gx-mute);}
+.gx-voice-who b{color:var(--gx-ink);font-size:13px;}
+.gx-stars{color:var(--gx-amber);letter-spacing:1px;font-size:12px;margin-bottom:8px;}
+
+/* ===== FAQ + 动态 + 联系 ===== */
+.gx-support{background:var(--gx-paper);}
+.gx-support-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:start;
+}
+.gx-faq{
+  background:#fff;border:1px solid var(--gx-line);border-radius:var(--gx-radius);
+  padding:10px 20px 18px;box-shadow:var(--gx-shadow-sm);
+}
+.gx-faq h3{font-size:16.5px;margin:10px 0 6px;}
+.gx-faq details{border-bottom:1px dashed #efe9e4;padding:11px 0;}
+.gx-faq details:last-child{border-bottom:none;}
+.gx-faq summary{
+  cursor:pointer;font-weight:700;font-size:14px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.gx-faq summary::-webkit-details-marker{display:none;}
+.gx-faq summary::after{
+  content:"+";color:var(--gx-red);font-weight:900;font-size:17px;flex:none;
+  transition:.2s;
+}
+.gx-faq details[open] summary::after{content:"–";}
+.gx-faq details p{font-size:13px;color:var(--gx-mute);margin:9px 0 0;}
+.gx-dyn{
+  background:#fff;border:1px solid var(--gx-line);border-radius:var(--gx-radius);
+  padding:20px;box-shadow:var(--gx-shadow-sm);
+}
+.gx-dyn h3{font-size:16.5px;margin-bottom:14px;}
+.gx-timeline{list-style:none;padding:0;margin:0;position:relative;}
+.gx-timeline::before{
+  content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--gx-red),#f3d3ce);
+}
+.gx-timeline li{padding:0 0 16px 22px;position:relative;font-size:13px;}
+.gx-timeline li:last-child{padding-bottom:0;}
+.gx-timeline li::before{
+  content:"";position:absolute;left:0;top:6px;width:12px;height:12px;
+  border-radius:50%;background:#fff;border:3px solid var(--gx-red);
+}
+.gx-timeline b{display:block;font-size:13.5px;color:var(--gx-ink);}
+.gx-timeline small{color:var(--gx-mute);font-size:11.5px;}
+.gx-contact{
+  margin-top:18px;background:linear-gradient(135deg,#1b1c21,#3d2220);
+  color:#f0e9e5;border-radius:var(--gx-radius);padding:20px;
+}
+.gx-contact h3{font-size:16px;margin-bottom:8px;color:#fff;}
+.gx-contact p{font-size:13px;color:#cfc6c1;margin:0 0 12px;}
+.gx-contact-row{display:flex;gap:10px;flex-wrap:wrap;}
+
+/* ===== 合作 & 页脚 ===== */
+.gx-partners{background:#fff;padding:clamp(30px,4vw,44px) 0;}
+.gx-partner-row{
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+}
+.gx-partner{
+  font-size:13px;font-weight:700;color:#5c5852;
+  border:1px solid var(--gx-line);border-radius:10px;
+  padding:9px 18px;background:#fbf9f7;
+  letter-spacing:.5px;
+}
+.gx-footer{
+  background:var(--gx-ink);color:#c4beba;
+  padding:clamp(38px,5vw,56px) 0 26px;
+}
+.gx-footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:26px;
+}
+.gx-footer h4{font-size:14px;color:#fff;margin-bottom:12px;letter-spacing:1px;}
+.gx-footer a{color:#c4beba;font-size:13px;display:block;padding:3.5px 0;transition:.2s;}
+.gx-footer a:hover{color:#fff;}
+.gx-footer p{font-size:13px;color:#a8a29d;margin:0 0 10px;}
+.gx-footer .gx-logo-text strong{color:#fff;}
+.gx-footer .gx-logo-text em{color:#8d8781;}
+.gx-footer-bottom{
+  margin-top:26px;padding-top:18px;border-top:1px solid #33343b;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#8d8781;
+}
+.gx-footer-bottom a{display:inline;font-size:12px;}
+
+/* ===== 右侧工具 ===== */
+.gx-topbtn{
+  position:fixed;right:22px;bottom:26px;z-index:80;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--gx-ink);color:#fff;
+  display:grid;place-items:center;
+  box-shadow:0 10px 24px rgba(27,28,33,.3);
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:.3s;
+  font-size:18px;
+}
+.gx-topbtn.is-show{opacity:1;pointer-events:auto;transform:none;}
+.gx-topbtn:hover{background:var(--gx-red);}
+
+/* ===== 弹窗 & Toast ===== */
+.gx-modal{
+  position:fixed;inset:0;z-index:200;
+  display:none;place-items:center;
+  background:rgba(18,18,22,.55);
+  backdrop-filter:blur(3px);
+  padding:22px;
+}
+.gx-modal.is-open{display:grid;}
+.gx-modal-box{
+  background:#fff;border-radius:18px;width:min(480px,100%);
+  padding:24px;box-shadow:0 30px 70px rgba(0,0,0,.32);
+  animation:gx-pop .26s ease;
+}
+@keyframes gx-pop{
+  from{transform:translateY(14px) scale(.97);opacity:0;}
+  to{transform:none;opacity:1;}
+}
+.gx-modal-box h3{font-size:18px;margin-bottom:8px;}
+.gx-modal-box p{font-size:13.5px;color:var(--gx-mute);}
+.gx-modal-box .gx-fieldrow{
+  display:grid;gap:10px;margin:14px 0;
+}
+.gx-modal-box input,.gx-modal-box textarea{
+  width:100%;border:1px solid var(--gx-line);border-radius:10px;
+  padding:10px 12px;font-family:inherit;font-size:13.5px;background:#fbf9f7;
+  outline:none;resize:vertical;
+}
+.gx-modal-box input:focus,.gx-modal-box textarea:focus{
+  border-color:var(--gx-red);background:#fff;box-shadow:0 0 0 3px rgba(232,69,60,.12);
+}
+.gx-modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:6px;}
+.gx-toast{
+  position:fixed;left:50%;bottom:42px;transform:translate(-50%,20px);
+  background:#1b1c21;color:#fff;font-size:13.5px;
+  padding:11px 20px;border-radius:999px;
+  box-shadow:0 12px 30px rgba(0,0,0,.3);
+  opacity:0;pointer-events:none;transition:.28s;z-index:300;
+  max-width:88vw;text-align:center;
+}
+.gx-toast.is-show{opacity:1;transform:translate(-50%,0);}
+
+/* ===== 响应式 ===== */
+@media (max-width:1080px){
+  .gx-creator-grid{grid-template-columns:repeat(3,1fr);}
+  .gx-special-grid{grid-template-columns:repeat(2,1fr);}
+  .gx-cardgrid{grid-template-columns:repeat(2,1fr);}
+  .gx-footer-grid{grid-template-columns:1fr 1fr;}
+  .gx-about-side{position:static;}
+}
+@media (max-width:900px){
+  .gx-nav{display:none;}
+  .gx-search{display:none;}
+  .gx-burger{display:grid;}
+  .gx-hero-grid{grid-template-columns:1fr;}
+  .gx-about-grid,.gx-mixed-grid,.gx-support-grid,.gx-focus-grid{grid-template-columns:1fr;}
+  .gx-focus-side{grid-template-rows:none;grid-template-columns:1fr 1fr;}
+  .gx-voice-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .gx-cardgrid,.gx-special-grid,.gx-creator-grid,.gx-voice-grid{grid-template-columns:1fr;}
+  .gx-focus-side{grid-template-columns:1fr;}
+  .gx-hero-stats{grid-template-columns:1fr 1fr;}
+  .gx-hero-float{position:static;margin-top:14px;animation:none;max-width:none;}
+  .gx-footer-grid{grid-template-columns:1fr;}
+  .gx-notice-inner{padding:7px 16px;}
+  .gx-header-inner{padding:10px 16px;gap:12px;}
+  .gx-header-tools .gx-btn-primary{display:none;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="gx-stickwrap">
+  <div class="gx-notice">
+    <div class="gx-notice-inner">
+      <span class="gx-notice-tag">公告</span>
+      <div class="gx-notice-track">
+        <span><b>11月19日</b> 新专题《热点背后》第一季上线，共 8 期原创影像</span>
+        <span>「冬季话题观察计划」报名已开启，欢迎社区创作者投稿</span>
+        <span>官方发布：每日吃瓜创作手册 2.0 版已更新至帮助中心</span>
+        <span><b>11月19日</b> 新专题《热点背后》第一季上线，共 8 期原创影像</span>
+        <span>「冬季话题观察计划」报名已开启，欢迎社区创作者投稿</span>
+        <span>官方发布：每日吃瓜创作手册 2.0 版已更新至帮助中心</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="gx-header">
+    <div class="gx-header-inner">
+      <a class="gx-logo" href="#gx-home" aria-label="每日吃瓜官方网站首页">
+        <span class="gx-logo-mark">吃</span>
+        <span class="gx-logo-text">
+          <strong>每日吃瓜</strong>
+          <em>官方网站</em>
+        </span>
+      </a>
+      <nav class="gx-nav" aria-label="主导航">
+        <a href="#gx-home">首页</a>
+        <a href="#gx-about">关于品牌</a>
+        <a href="#gx-focus">焦点</a>
+        <a href="#gx-stream">内容</a>
+        <a href="#gx-special">专题</a>
+        <a href="#gx-creators">创作者</a>
+        <a href="#gx-support">帮助</a>
+      </nav>
+      <div class="gx-header-tools">
+        <div class="gx-search" id="gx-search">
+          <input type="search" id="gx-search-input" placeholder="搜索话题 / 创作者 / 专题" aria-label="站内搜索">
+          <button type="button" id="gx-search-btn" aria-label="执行搜索">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          </button>
+          <div class="gx-search-hint" id="gx-search-hint">
+            <p>热门搜索</p>
+            <a href="#gx-stream">冬季话题观察计划</a>
+            <a href="#gx-special">热点背后 · 第一季</a>
+            <a href="#gx-creators">城市夜行者</a>
+            <a href="#gx-stream">如何判断一条消息的可信度</a>
+          </div>
+        </div>
+        <button class="gx-btn gx-btn-primary" type="button" data-gx-open="submit">我要投稿</button>
+        <button class="gx-burger" type="button" id="gx-burger" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="gx-mobile-panel" id="gx-mobile-panel">
+      <a href="#gx-home">首页</a>
+      <a href="#gx-about">关于品牌</a>
+      <a href="#gx-focus">焦点</a>
+      <a href="#gx-stream">内容</a>
+      <a href="#gx-special">专题</a>
+      <a href="#gx-creators">创作者</a>
+      <a href="#gx-mixed">榜单与随笔</a>
+      <a href="#gx-support">帮助与联系</a>
+    </div>
+  </header>
+</div>
+
+<main>
+  <!-- 首屏 -->
+  <section class="gx-hero" id="gx-home">
+    <div class="gx-wrap">
+      <div class="gx-hero-grid">
+        <div>
+          <span class="gx-hero-badge"><i></i>官方站点 · 每日吃瓜品牌官网</span>
+          <h1>每日<span>吃瓜</span></h1>
+          <p class="gx-hero-tag">把热闹看明白，把故事讲清楚</p>
+          <p class="gx-hero-desc">
+            每日吃瓜是一个以热点解读与生活观察为核心的原创视频品牌。我们不做情绪的搬运工，只做信息的整理者：用影像还原事件脉络，用访谈补充被忽略的细节，用社区讨论让每一次围观都留下思考的痕迹。作为持续运营的企业级内容平台，我们坚持正版、高清、专业的制作标准，与社区创作者一起构建值得信赖的内容生态。
+          </p>
+          <div class="gx-hero-actions">
+            <a class="gx-btn gx-btn-primary" href="#gx-focus">进入焦点内容</a>
+            <a class="gx-btn gx-btn-ghost" href="#gx-about">了解品牌故事</a>
+          </div>
+          <div class="gx-hero-stats">
+            <div class="gx-stat">
+              <b data-gx-count="1286">0</b>
+              <small>原创影像作品</small>
+            </div>
+            <div class="gx-stat">
+              <b data-gx-count="42">0</b>
+              <small>签约创作者（位）</small>
+            </div>
+            <div class="gx-stat">
+              <b data-gx-count="365">0</b>
+              <small>天持续更新</small>
+            </div>
+          </div>
+        </div>
+        <div class="gx-hero-visual">
+          <div class="gx-hero-frame">
+            <img alt="每日吃瓜品牌主视觉：城市夜色中的信息光流与围观人群剪影" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 620'><defs><linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23141826'/><stop offset='.55' stop-color='%233b2230'/><stop offset='1' stop-color='%238a3a30'/></linearGradient><linearGradient id='beam' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ffd06a' stop-opacity='.9'/><stop offset='1' stop-color='%23e8453c' stop-opacity='0'/></linearGradient></defs><rect width='800' height='620' fill='url(%23sky)'/><g opacity='.55'><circle cx='120' cy='110' r='2.6' fill='%23ffe9b0'/><circle cx='210' cy='70' r='1.8' fill='%23ffe9b0'/><circle cx='330' cy='132' r='2.2' fill='%23ffd6cf'/><circle cx='470' cy='66' r='2' fill='%23ffe9b0'/><circle cx='620' cy='118' r='2.6' fill='%23ffd6cf'/><circle cx='710' cy='58' r='1.7' fill='%23ffe9b0'/></g><g><rect x='0' y='420' width='130' height='200' fill='%23151a26'/><rect x='140' y='368' width='96' height='252' fill='%23202130'/><rect x='248' y='300' width='120' height='320' fill='%23121a26'/><rect x='380' y='392' width='110' height='228' fill='%23242231'/><rect x='500' y='332' width='132' height='288' fill='%23151a26'/><rect x='644' y='406' width='156' height='214' fill='%23202130'/></g><g fill='%23ffcf87' opacity='.85'><rect x='164' y='394' width='12' height='14'/><rect x='190' y='394' width='12' height='14'/><rect x='164' y='424' width='12' height='14'/><rect x='276' y='330' width='12' height='14'/><rect x='304' y='330' width='12' height='14'/><rect x='276' y='360' width='12' height='14'/><rect x='528' y='360' width='12' height='14'/><rect x='556' y='390' width='12' height='14'/><rect x='676' y='434' width='12' height='14'/></g><path d='M120 470 L330 250 L520 480' stroke='url(%23beam)' stroke-width='5' fill='none' opacity='.75'/><path d='M400 500 L560 300 L760 500' stroke='url(%23beam)' stroke-width='3' fill='none' opacity='.5'/><g fill='%230f121b'><ellipse cx='300' cy='560' rx='46' ry='58'/><circle cx='300' cy='488' r='24'/><ellipse cx='430' cy='572' rx='40' ry='50'/><circle cx='430' cy='508' r='21'/><ellipse cx='560' cy='566' rx='42' ry='54'/><circle cx='560' cy='500' r='22'/></g><rect x='250' y='330' width='150' height='42' rx='21' fill='%23e8453c'/><text x='325' y='358' font-size='21' font-family='sans-serif' font-weight='bold' fill='%23ffffff' text-anchor='middle'>热点背后</text></svg>">
+          </div>
+          <div class="gx-hero-float">
+            <span class="gx-dot">72%</span>
+            <div>
+              <strong>今日话题热度</strong>
+              <small>来自社区 12,480 次真实讨论</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于品牌 + 关键词解析 -->
+  <section class="gx-section gx-about" id="gx-about">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Brand Story</span>
+          <h2 class="gx-h2">关于每日吃瓜：我们如何理解「吃瓜」</h2>
+        </div>
+        <p class="gx-lead">从一条热搜到一段完整的影像，中间隔着的是核实、走访、剪辑与反复推敲。这是我们愿意长期投入的部分。</p>
+      </div>
+      <div class="gx-about-grid">
+        <aside class="gx-about-side">
+          <h3>品牌关键词速览</h3>
+          <ul class="gx-side-list">
+            <li><b>定位</b><span>热点解读型原创视频社区</span></li>
+            <li><b>成立</b><span>2019 年，持续运营至今</span></li>
+            <li><b>内容</b><span>观察、访谈、科普、生活记录</span></li>
+            <li><b>原则</b><span>先核实，后表达；先理解，后评价</span></li>
+            <li><b>社区</b><span>42 位签约创作者，超 18 万注册用户</span></li>
+            <li><b>更新</b><span>每周三、周六固定上新</span></li>
+          </ul>
+        </aside>
+        <div class="gx-about-body">
+          <p>「每日吃瓜」这个名字，乍听轻松，做起来却并不轻松。在一个信息以秒为单位翻滚的时代，人们习惯用「吃瓜」形容围观，但对真正的内容团队而言，围观之后留下的东西才是价值的所在。作为每日吃瓜的官方网站，我们把这项工作的起点定得很朴素：<strong>先把事实弄清楚</strong>。一条消息从出现到发酵，往往伴随大量转述、截取与再加工，团队要做的第一件事，是回到最早的信源，确认时间、地点、人物与语境，再决定这条内容是否值得进入选题会。</p>
+          <h3>从围观到理解：内容方向的三条主线</h3>
+          <p>目前每日吃瓜的内容体系由三条主线构成。第一条是<strong>热点观察</strong>，针对公共讨论度高的事件，用 8 到 15 分钟的影像梳理来龙去脉，配合时间轴与关键截图，让观众在信息洪流里找到一个锚点。第二条是<strong>人物访谈</strong>，我们更愿意把镜头交给当事人、旁观者与行业从业者，让他们讲述自己在事件中的位置与判断。第三条是<strong>生活记录</strong>，热点之外，日常同样值得被拍摄：早餐摊的凌晨、深夜便利店的常客、小城青年的迁徙，这些看似平淡的片段，构成了社区最具温度的底色。</p>
+          <h3>创作者、社区与内容生态</h3>
+          <p>品牌成立之初，每日吃瓜只是三个人、两台相机的小团队。随着内容积累，我们逐步开放了创作者合作计划，如今已有 42 位签约创作者分布在不同城市，覆盖记录、科普、访谈、美食、户外等多个垂直领域。平台为创作者提供选题支持、素材核验协助与后期资源，创作者则为社区带来源源不断的一手视角。这种双向的合作关系，让我们在保持内容品质的同时，也保留了足够多元的表达空间。我们始终相信，一个健康的内容生态，需要企业级的规范，也需要个体的真实。</p>
+          <h3>为什么选择「每日」二字</h3>
+          <p>每日吃瓜的「每日」，既是更新频率的承诺，也是一种态度：热点每天都在发生，理解不应是偶发的。为此，我们建立了固定的选题值班机制，确保重要事件在 24 小时内至少有初步梳理；同时保留每周三、周六的固定更新节奏，让深度内容不被速度裹挟。截至当前，平台已累计发布原创影像作品 1286 部，专题企划 26 个，社区讨论帖超过 7 万条。这组数字并不耀眼，但每一项都来自真实的制作与真实的参与。</p>
+          <h3>关于品质与社会责任</h3>
+          <p>作为一家持续运营的视频品牌，我们对品质的要求体现在每一个环节：高清的拍摄与导出标准、正版授权的声音与素材、可追溯的引用来源、以及发布前的双人复核。与此同时，我们也清楚内容平台肩负的社会责任。涉及个人隐私、未成年人、未经证实指控的内容，我们一律不做；涉及争议话题的表达，我们要求给出多方视角，而非单一定论。用户至上并非口号，它意味着在流量与真实之间，我们选择真实；在情绪与理解之间，我们选择理解。</p>
+          <h3>接下来的方向</h3>
+          <p>2026 年冬季，每日吃瓜将上线「冬季话题观察计划」，面向社区公开征集选题线索，并邀请创作者参与联合制作。我们希望通过这一计划，让更多真正身处现场的人获得表达的通道，也让「吃瓜」这件事从被动围观走向主动理解。官方网站将持续同步品牌动态、官方发布与创作者招募信息，欢迎关注并参与其中。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="gx-section gx-focus" id="gx-focus">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Focus</span>
+          <h2 class="gx-h2">焦点内容 · 本周值得看的三部</h2>
+        </div>
+        <a class="gx-btn gx-btn-light" href="#gx-stream">查看全部内容</a>
+      </div>
+      <div class="gx-focus-grid">
+        <article class="gx-focus-main">
+          <img alt="专题封面：一档关于热搜形成过程的城市夜景纪录影像" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 540'><defs><linearGradient id='bg1' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2314212e'/><stop offset='.6' stop-color='%23203a4a'/><stop offset='1' stop-color='%23b34a3c'/></linearGradient></defs><rect width='900' height='540' fill='url(%23bg1)'/><g opacity='.6' stroke='%23ffe09a' stroke-width='1.4' fill='none'><path d='M0 400 Q220 300 450 380 T900 340'/><path d='M0 440 Q240 360 470 430 T900 400'/></g><g fill='%23ffe4a3' opacity='.9'><rect x='90' y='180' width='18' height='72'/><rect x='130' y='150' width='18' height='102'/><rect x='170' y='205' width='18' height='47'/><rect x='210' y='165' width='18' height='87'/></g><g fill='%230d1a24'><polygon points='700,540 800,180 900,540'/><polygon points='620,540 700,240 780,540'/></g><circle cx='740' cy='120' r='34' fill='%23ffd98a' opacity='.85'/><g fill='%23f4f1e8' font-family='sans-serif' text-anchor='middle'><text x='450' y='470' font-size='30' font-weight='bold' letter-spacing='4'>热搜是怎么形成的</text></g></svg>">
+          <div class="gx-focus-veil"></div>
+          <div class="gx-focus-info">
+            <div class="gx-tagrow">
+              <span class="gx-tag gx-tag-red">焦点首推</span>
+              <span class="gx-tag">热点观察</span>
+              <span class="gx-tag">原创</span>
+            </div>
+            <h3>热搜是怎么形成的：一次完整的话题生命周期追踪</h3>
+            <p>我们用 12 天时间记录了同一个话题从零散讨论到进入公共视野的全过程，采访了平台运营、媒体编辑与普通用户，试图回答一个简单的问题：我们看到的，是怎么被看到的。</p>
+            <div class="gx-meta">
+              <span>作者：阿谷观察室</span>
+              <span>14:26</span>
+              <span>2.8 万次播放</span>
+              <span>收藏 3,412</span>
+            </div>
+          </div>
+        </article>
+        <div class="gx-focus-side">
+          <article class="gx-mini">
+            <img alt="人物访谈封面：电话亭里的信源核实记录" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 380'><rect width='800' height='380' fill='%232a3b2f'/><g stroke='%2397c4a0' stroke-width='2' fill='none' opacity='.7'><circle cx='210' cy='170' r='62'/><circle cx='210' cy='170' r='94'/><path d='M210 76v-40M210 264v40M116 170h-40M304 170h40'/></g><g fill='%23e7f2e5' font-family='sans-serif'><text x='420' y='170' font-size='26' font-weight='bold'>我们打了 37 通电话</text><text x='420' y='210' font-size='16' opacity='.8'>只为确认一条消息的出处</text></g><circle cx='640' cy='290' r='40' fill='%23f2b23e' opacity='.9'/></svg>">
+            <div class="gx-mini-info">
+              <h4>我们打了 37 通电话，只为确认一条消息的出处</h4>
+              <small>人物访谈 · 09:48 · 1.4 万次播放</small>
+            </div>
+          </article>
+          <article class="gx-mini">
+            <img alt="生活记录封面：凌晨四点的早餐摊蒸汽与街灯光斑" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 380'><rect width='800' height='380' fill='%23301f1b'/><circle cx='150' cy='120' r='70' fill='%23ffbe5c' opacity='.35'/><circle cx='150' cy='120' r='34' fill='%23ffd98a' opacity='.8'/><g fill='%23e6d8cb' opacity='.8'><path d='M120 320 q30 -70 70 -70 q40 0 70 70 z'/></g><g stroke='%23ffd98a' stroke-width='2' fill='none' opacity='.55'><path d='M150 250 q-20 -40 8 -66'/><path d='M178 258 q-16 -34 12 -56'/></g><g fill='%23f7ece2' font-family='sans-serif'><text x='360' y='180' font-size='26' font-weight='bold'>凌晨四点的早餐摊</text><text x='360' y='220' font-size='16' opacity='.8'>城市醒来的第一小时</text></g></svg>">
+            <div class="gx-mini-info">
+              <h4>凌晨四点的早餐摊：城市醒来的第一小时</h4>
+              <small>生活记录 · 06:32 · 9,860 次播放</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频流 -->
+  <section class="gx-section gx-stream" id="gx-stream">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Content</span>
+          <h2 class="gx-h2">精品内容 · 今日更新</h2>
+        </div>
+        <p class="gx-lead">按主题筛选，找到你关心的那一类「瓜」。</p>
+      </div>
+      <div class="gx-filterbar" id="gx-filterbar" role="tablist" aria-label="内容筛选">
+        <button class="gx-chip is-active" data-gx-filter="all" type="button">全部</button>
+        <button class="gx-chip" data-gx-filter="观察" type="button">热点观察</button>
+        <button class="gx-chip" data-gx-filter="访谈" type="button">人物访谈</button>
+        <button class="gx-chip" data-gx-filter="生活" type="button">生活记录</button>
+        <button class="gx-chip" data-gx-filter="科普" type="button">实用科普</button>
+      </div>
+      <div class="gx-cardgrid" id="gx-cardgrid">
+
+        <article class="gx-card" data-gx-cat="观察">
+          <div class="gx-cover">
+            <img alt="视频封面：时间轴上的信息流与截图卡片拼贴" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%23222b3a'/><g stroke='%23ff8a7a' stroke-width='3' fill='none'><path d='M40 260 H600'/></g><g fill='%23ff8a7a'><circle cx='110' cy='260' r='9'/><circle cx='260' cy='260' r='9'/><circle cx='410' cy='260' r='9'/><circle cx='560' cy='260' r='9'/></g><g fill='%23e9eef6' opacity='.85'><rect x='70' y='90' width='130' height='86' rx='8'/><rect x='230' y='120' width='130' height='86' rx='8'/><rect x='400' y='80' width='150' height='96' rx='8'/></g><g stroke='%235a6a83' stroke-width='2'><path d='M86 120h96M86 140h78M246 150h96M246 170h64M416 112h116M416 132h86'/></g><text x='320' y='330' font-size='17' fill='%23a9bad0' font-family='sans-serif' text-anchor='middle'>时间轴 · 信源图谱</text></svg>">
+            <span class="gx-corner">深度</span>
+            <span class="gx-dur">11:20</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>一条消息的 72 小时：从截图到公共议题</h3>
+            <p>我们把同一个事件的三次反转画成了时间轴，还原每一次信息走样发生在哪一步。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a1">谷</span>
+              <span>阿谷观察室</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>1.2k</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gx-card" data-gx-cat="访谈">
+          <div class="gx-cover">
+            <img alt="视频封面：麦克风前的访谈剪影与暖色逆光" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%23362a24'/><circle cx='470' cy='150' r='110' fill='%23ffb46a' opacity='.28'/><circle cx='470' cy='150' r='62' fill='%23ffd39a' opacity='.45'/><g fill='%231c1512'><ellipse cx='300' cy='330' rx='96' ry='70'/><circle cx='300' cy='232' r='48'/></g><g fill='%23120d0b'><rect x='352' y='214' width='12' height='76' rx='6'/><ellipse cx='358' cy='206' rx='17' ry='22'/></g><g stroke='%23ffc98a' stroke-width='2.4' fill='none' opacity='.8'><path d='M400 120 q40 30 0 60'/></g><text x='96' y='300' font-size='17' fill='%23ffd9ad' font-family='sans-serif'>人物访谈</text></svg>">
+            <span class="gx-dur">18:04</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>和三位媒体编辑聊聊：什么算「值得报道」</h3>
+            <p>她们每天要处理上百条线索，最终只有极小一部分进入编辑流程，标准究竟是什么。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a3">秦</span>
+              <span>秦小满</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>856</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gx-card" data-gx-cat="生活">
+          <div class="gx-cover">
+            <img alt="视频封面：老街巷口的自行车与雨后石板路" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><defs><linearGradient id='rain' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23445364'/><stop offset='1' stop-color='%238ca0ac'/></linearGradient></defs><rect width='640' height='360' fill='url(%23rain)'/><g stroke='%23dfe9ef' stroke-width='1.4' opacity='.45'><path d='M90 0 L70 90M180 0 L160 110M280 0 L262 96M380 0 L360 120M480 0 L460 104M580 0 L560 92'/></g><g fill='%232f3a44'><rect x='0' y='220' width='640' height='140'/></g><g stroke='%23495661' stroke-width='2' opacity='.8'><path d='M0 250 H640M0 285 H640M0 320 H640'/></g><g fill='%23d8dfe4'><circle cx='220' cy='228' r='26' fill='none' stroke='%23eef3f6' stroke-width='4'/><circle cx='300' cy='228' r='26' fill='none' stroke='%23eef3f6' stroke-width='4'/><path d='M220 228 L252 190 H286 L300 228' stroke='%23eef3f6' stroke-width='4' fill='none'/><path d='M252 190 H240' stroke='%23eef3f6' stroke-width='4'/></g><text x='420' y='160' font-size='18' fill='%23eaf2f6' font-family='sans-serif'>雨后老街</text></svg>">
+            <span class="gx-dur">07:41</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>雨后老街的四十分钟：一把伞下的三种人生</h3>
+            <p>跟着修鞋匠、花店老板和放学的小孩，走完一条只有六百米的老街。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a2">林</span>
+              <span>林拾光</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>2.1k</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gx-card" data-gx-cat="科普">
+          <div class="gx-cover">
+            <img alt="视频封面：手机屏幕放大镜与信息核验流程图" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%231b2c28'/><g fill='none' stroke='%2367d1a5' stroke-width='3'><rect x='60' y='60' width='150' height='240' rx='18'/><circle cx='405' cy='185' r='76'/><path d='M460 240 L530 310' stroke-width='12' stroke-linecap='round'/></g><g stroke='%23a8e8ca' stroke-width='2' opacity='.8'><path d='M84 110h100M84 140h78M84 170h92'/></g><g fill='%2337a877'><circle cx='405' cy='185' r='58' opacity='.18'/></g><text x='405' y='192' font-size='22' fill='%23bdf0d6' font-family='sans-serif' text-anchor='middle'>核验</text><text x='92' y='330' font-size='15' fill='%238fc7b2' font-family='sans-serif'>四步辨别法</text></svg>">
+            <span class="gx-dur">09:15</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>如何判断一条消息的可信度：四个可操作的动作</h3>
+            <p>不靠感觉，靠方法。查源头、找原件、看时间、比多方，每一步都能立刻上手。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a4">周</span>
+              <span>周明理</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>3.4k</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gx-card" data-gx-cat="观察">
+          <div class="gx-cover">
+            <img alt="视频封面：深夜写字楼窗格与加班的灯光剪影" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%23141b2b'/><g fill='%231e2942'><rect x='40' y='40' width='200' height='320'/><rect x='260' y='90' width='160' height='270'/><rect x='440' y='20' width='160' height='340'/></g><g fill='%23ffcf6b' opacity='.9'><rect x='64' y='70' width='26' height='30'/><rect x='110' y='130' width='26' height='30'/><rect x='156' y='90' width='26' height='30'/><rect x='64' y='200' width='26' height='30'/><rect x='284' y='130' width='26' height='30'/><rect x='330' y='200' width='26' height='30'/><rect x='466' y='60' width='26' height='30'/><rect x='512' y='140' width='26' height='30'/><rect x='466' y='230' width='26' height='30'/></g><circle cx='330' cy='300' r='30' fill='%231f2b45'/><circle cx='330' cy='278' r='14' fill='%23ffd98a' opacity='.7'/><text x='320' y='350' font-size='15' fill='%237f8da8' font-family='sans-serif' text-anchor='middle'>23:47 的办公室</text></svg>">
+            <span class="gx-corner">新</span>
+            <span class="gx-dur">13:02</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>加班之后：一间办公室里的三种选择</h3>
+            <p>留下、跳槽、还是自己创业？我们跟拍了三位在同一栋楼里工作的年轻人。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a5">许</span>
+              <span>许夜行</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>978</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gx-card" data-gx-cat="生活">
+          <div class="gx-cover">
+            <img alt="视频封面：菜市场里的红色番茄与竹编篮子" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='%23f1e3c9'/><g fill='%23c94b35'><circle cx='150' cy='190' r='42'/><circle cx='220' cy='215' r='34'/><circle cx='270' cy='178' r='30'/></g><g fill='%234c7f45'><path d='M150 148 q16 -22 34 -6 q-16 20 -34 6z'/><path d='M220 181 q14 -18 28 -4 q-14 16 -28 4z'/></g><g fill='none' stroke='%23a9803f' stroke-width='6'><path d='M90 240 q60 90 180 90 q80 0 130 -60'/></g><g fill='%239c7a44' opacity='.8'><rect x='400' y='150' width='150' height='120' rx='10'/></g><g fill='%23f8f1e2' font-family='sans-serif'><text x='430' y='205' font-size='22' font-weight='bold'>今日菜价</text><text x='430' y='238' font-size='16'>番茄 3.2 元/斤</text></g></svg>">
+            <span class="gx-dur">05:58</span>
+            <span class="gx-play"><i></i></span>
+          </div>
+          <div class="gx-card-body">
+            <h3>跟着菜市场摊主过一天：价格背后的经济学</h3>
+            <p>从凌晨进货到傍晚收摊，一颗番茄的价格如何被决定，摊主算得比谁都清楚。</p>
+            <div class="gx-card-foot">
+              <span class="gx-avatar gx-a2">林</span>
+              <span>林拾光</span>
+              <div class="gx-actions">
+                <button class="gx-icobtn" type="button" data-gx-like><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22V10l5-8 1.5 1.5L12 10h7a2 2 0 0 1 2 2.3l-1.4 8A2 2 0 0 1 17.6 22H7z"/></svg><span>1.6k</span></button>
+                <button class="gx-icobtn" type="button" data-gx-fav><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5C19 15.5 12 20 12 20z"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="gx-section gx-special" id="gx-special">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Series</span>
+          <h2 class="gx-h2">专题企划 · 一次看完一个主题</h2>
+        </div>
+        <p class="gx-lead">四个正在进行的专题，每个都是一次长线的观察与记录。</p>
+      </div>
+      <div class="gx-special-grid">
+        <article class="gx-special-card">
+          <img alt="专题封面：红色印章与档案袋组成的热点观察视觉" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 560'><rect width='480' height='560' fill='%23b0362c'/><g fill='%23f6e9d8'><rect x='70' y='120' width='340' height='300' rx='10'/></g><g stroke='%23c9b9a2' stroke-width='2'><path d='M100 180h280M100 220h280M100 260h200'/></g><g fill='%23b0362c' opacity='.85'><circle cx='330' cy='360' r='54' fill='none' stroke='%23b0362c' stroke-width='6'/></g><text x='330' y='368' font-size='24' fill='%23b0362c' font-family='sans-serif' font-weight='bold' text-anchor='middle'>核</text><text x='240' y='500' font-size='30' fill='%23f6e9d8' font-family='sans-serif' font-weight='bold' text-anchor='middle' letter-spacing='3'>热点背后</text></svg>">
+          <div class="gx-special-body">
+            <h3>热点背后 · 第一季</h3>
+            <p>拆解八个公共话题的形成过程，每期配一份可查阅的资料清单。</p>
+            <span class="gx-special-state">更新至 05 期</span>
+          </div>
+        </article>
+        <article class="gx-special-card">
+          <img alt="专题封面：城市夜晚的霓虹与雨滴倒影" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 560'><rect width='480' height='560' fill='%231a2233'/><g stroke='%2341d6a0' stroke-width='4' fill='none' opacity='.8'><circle cx='240' cy='200' r='70'/><circle cx='240' cy='200' r='110'/></g><g fill='%23ff5c8a' opacity='.7'><rect x='60' y='380' width='80' height='160'/><rect x='160' y='420' width='80' height='120'/><rect x='260' y='350' width='80' height='190'/><rect x='360' y='440' width='70' height='100'/></g><g stroke='%2341d6a0' stroke-width='2' opacity='.5'><path d='M0 520 H480'/></g><text x='240' y='110' font-size='26' fill='%23e8f6f0' font-family='sans-serif' text-anchor='middle' letter-spacing='2'>夜行记</text></svg>">
+          <div class="gx-special-body">
+            <h3>夜行记 · 城市十二点之后</h3>
+            <p>记录那些在城市入睡后仍然清醒的人，六座城市，十二段夜班人生。</p>
+            <span class="gx-special-state">更新至 08 期</span>
+          </div>
+        </article>
+        <article class="gx-special-card">
+          <img alt="专题封面：放大镜下的文字与校验标记" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 560'><rect width='480' height='560' fill='%23e8dfcf'/><g fill='%23c8b89b'><rect x='60' y='80' width='360' height='120' rx='8'/><rect x='60' y='230' width='360' height='120' rx='8'/><rect x='60' y='380' width='360' height='110' rx='8'/></g><g stroke='%23414a3c' stroke-width='8' fill='none'><circle cx='300' cy='290' r='66'/><path d='M348 340 L420 412' stroke-width='16' stroke-linecap='round'/></g><text x='240' y='520' font-size='24' fill='%23414a3c' font-family='sans-serif' text-anchor='middle' letter-spacing='3'>核验手册</text></svg>">
+          <div class="gx-special-body">
+            <h3>核验手册 · 普通人也能用的方法</h3>
+            <p>用生活化的案例讲清信息核验，每期一个动作，看完就能用。</p>
+            <span class="gx-special-state is-done">已完结</span>
+          </div>
+        </article>
+        <article class="gx-special-card">
+          <img alt="专题封面：冬日的暖茶与窗外飘雪" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 560'><rect width='480' height='560' fill='%232b3b4a'/><g fill='%23ffffff' opacity='.8'><circle cx='80' cy='80' r='4'/><circle cx='180' cy='130' r='3'/><circle cx='320' cy='70' r='4'/><circle cx='400' cy='150' r='3'/><circle cx='120' cy='220' r='3'/><circle cx='360' cy='240' r='4'/></g><g><rect x='150' y='300' width='180' height='120' rx='16' fill='%23f0e6d6'/><path d='M330 330 q46 10 0 60' stroke='%23f0e6d6' stroke-width='14' fill='none'/></g><g stroke='%23e6b96a' stroke-width='3' fill='none' opacity='.8'><path d='M210 280 q-14 -30 8 -50'/><path d='M250 286 q-12 -26 10 -44'/></g><text x='240' y='480' font-size='26' fill='%23dfeaf2' font-family='sans-serif' text-anchor='middle' letter-spacing='2'>冬叙</text></svg>">
+          <div class="gx-special-body">
+            <h3>冬叙 · 社区联合征集</h3>
+            <p>面向社区开放选题线索征集，入选线索将由创作者联合制作成片。</p>
+            <span class="gx-special-state">报名中</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="gx-section gx-creators" id="gx-creators">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Creators</span>
+          <h2 class="gx-h2">创作者矩阵 · 镜头背后的人</h2>
+        </div>
+        <p class="gx-lead">他们来自不同城市、不同行业，带着各自关心的问题走进镜头。</p>
+      </div>
+      <div class="gx-creator-grid">
+        <article class="gx-creator">
+          <div class="gx-bigavatar gx-a1">谷</div>
+          <h3>阿谷观察室</h3>
+          <div class="gx-field">热点观察 · 深度梳理</div>
+          <p>前调查记者，擅长把复杂事件拆成时间轴。坚持每个结论至少有两个独立信源。</p>
+          <div class="gx-creator-data">
+            <span><b>218</b>作品</span>
+            <span><b>36.4万</b>粉丝</span>
+          </div>
+          <button class="gx-btn gx-btn-light" type="button" data-gx-creator="阿谷观察室|阿谷观察室专注热点事件的完整梳理，2019 年加入每日吃瓜，累计发布 218 部原创影像，代表作《一条消息的 72 小时》。">了解作者</button>
+        </article>
+        <article class="gx-creator">
+          <div class="gx-bigavatar gx-a3">秦</div>
+          <h3>秦小满</h3>
+          <div class="gx-field">人物访谈 · 对话现场</div>
+          <p>访谈类主持人，提问温和但从不回避关键。相信好的对话需要留白和耐心。</p>
+          <div class="gx-creator-data">
+            <span><b>96</b>作品</span>
+            <span><b>12.8万</b>粉丝</span>
+          </div>
+          <button class="gx-btn gx-btn-light" type="button" data-gx-creator="秦小满|秦小满主持每日吃瓜人物访谈栏目，关注事件中的人而非标签，已完成 96 期对话，访谈对象涵盖媒体、社区工作者与普通当事人。">了解作者</button>
+        </article>
+        <article class="gx-creator">
+          <div class="gx-bigavatar gx-a2">林</div>
+          <h3>林拾光</h3>
+          <div class="gx-field">生活记录 · 市井日常</div>
+          <p>习惯早起，喜欢拍街道和食物。她的镜头里很少有宏大叙事，却总能让人停下来。</p>
+          <div class="gx-creator-data">
+            <span><b>174</b>作品</span>
+            <span><b>24.1万</b>粉丝</span>
+          </div>
+          <button class="gx-btn gx-btn-light" type="button" data-gx-creator="林拾光|林拾光用生活记录的方式呈现城市细节，从早餐摊到老街巷口，作品以稳定的节奏更新，是社区里口碑最好的创作者之一。">了解作者</button>
+        </article>
+        <article class="gx-creator">
+          <div class="gx-bigavatar gx-a4">周</div>
+          <h3>周明理</h3>
+          <div class="gx-field">实用科普 · 方法工具</div>
+          <p>科普作者，把复杂的判断方法讲成步骤。他的视频评论区常被当作工具书收藏。</p>
+          <div class="gx-creator-data">
+            <span><b>88</b>作品</span>
+            <span><b>18.6万</b>粉丝</span>
+          </div>
+          <button class="gx-btn gx-btn-light" type="button" data-gx-creator="周明理|周明理专注信息判断与实用技能类内容，主张用可执行的步骤替代模糊的感觉，代表作《如何判断一条消息的可信度》。">了解作者</button>
+        </article>
+        <article class="gx-creator">
+          <div class="gx-bigavatar gx-a5">许</div>
+          <h3>许夜行</h3>
+          <div class="gx-field">城市探索 · 夜色观察</div>
+          <p>长期拍摄夜间工作群体，习惯在凌晨出发。作品节奏安静，信息密度高。</p>
+          <div class="gx-creator-data">
+            <span><b>132</b>作品</span>
+            <span><b>21.3万</b>粉丝</span>
+          </div>
+          <button class="gx-btn gx-btn-light" type="button" data-gx-creator="许夜行|许夜行是每日吃瓜签约创作者，专注夜间城市与职场议题，擅长跟拍式记录，作品多次入选平台年度精品内容。">了解作者</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 榜单 + 随笔 -->
+  <section class="gx-section gx-mixed" id="gx-mixed">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Rank &amp; Notes</span>
+          <h2 class="gx-h2">本周榜单与编辑随笔</h2>
+        </div>
+        <p class="gx-lead">数据来自社区真实互动，随笔来自编辑部的日常记录。</p>
+      </div>
+      <div class="gx-mixed-grid">
+        <div class="gx-rank">
+          <h3>本周热度榜 · 社区投票产生</h3>
+          <ul class="gx-rank-list">
+            <li><span class="gx-rank-no">1</span><span class="gx-rank-title">一条消息的 72 小时：从截图到公共议题</span><small>观察</small></li>
+            <li><span class="gx-rank-no">2</span><span class="gx-rank-title">如何判断一条消息的可信度：四个可操作的动作</span><small>科普</small></li>
+            <li><span class="gx-rank-no">3</span><span class="gx-rank-title">凌晨四点的早餐摊：城市醒来的第一小时</span><small>生活</small></li>
+            <li><span class="gx-rank-no">4</span><span class="gx-rank-title">和三位媒体编辑聊聊：什么算「值得报道」</span><small>访谈</small></li>
+            <li><span class="gx-rank-no">5</span><span class="gx-rank-title">加班之后：一间办公室里的三种选择</span><small>观察</small></li>
+            <li><span class="gx-rank-no">6</span><span class="gx-rank-title">雨后老街的四十分钟：一把伞下的三种人生</span><small>生活</small></li>
+          </ul>
+        </div>
+        <div class="gx-notes">
+          <article class="gx-note">
+            <h3>编辑手记：为什么我们坚持给出信源</h3>
+            <p>有观众留言说，看我们的视频最累的一点是「信息太密」。这句话我们讨论了很久，最后决定不改。因为比起看得轻松，我们更希望你看完之后，有能力自己去判断下一件事。</p>
+            <div class="gx-note-meta"><span>编辑部 · 11月17日</span><span>阅读 4,120</span></div>
+          </article>
+          <article class="gx-note">
+            <h3>一位创作者的来信：我不想只拍热闹</h3>
+            <p>许夜行在投稿信箱里写了一封长信，讲他为什么把镜头对准深夜还在工作的人。他说，热闹是结果，安静的原因才值得被记录。这封信后来成了「夜行记」专题的开篇。</p>
+            <div class="gx-note-meta"><span>创作者来信 · 11月12日</span><span>阅读 3,286</span></div>
+          </article>
+          <article class="gx-note">
+            <h3>社区观察：评论区正在变得更有耐心</h3>
+            <p>最近一个月，社区里「先问清楚再评论」的留言比例明显上升。这或许是个微小的变化，但对一个以讨论为核心的社区来说，它比任何数据增长都重要。</p>
+            <div class="gx-note-meta"><span>社区运营 · 11月08日</span><span>阅读 2,745</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="gx-section gx-voices">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Voices</span>
+          <h2 class="gx-h2">社区口碑 · 他们这样评价每日吃瓜</h2>
+        </div>
+        <button class="gx-btn gx-btn-light" type="button" data-gx-open="feedback">提交反馈</button>
+      </div>
+      <div class="gx-voice-grid">
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★★</div>
+          <p>「第一次在短视频以外的地方看到有人认真做时间轴。看完那期热搜视频，我回头去翻了自己转发过的几条消息，确实有两三条是断章取义的。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a3">陈</span><div><b>陈屿</b><br>注册用户 · 2 年</div></div>
+        </article>
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★★</div>
+          <p>「作为内容从业者，我很在意引用是否规范。这个平台的视频结尾会列出来源，哪怕只是一张截图也会标注获取时间，这点很难得。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a1">K</span><div><b>Kiko</b><br>媒体编辑</div></div>
+        </article>
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★☆</div>
+          <p>「生活类的内容我很喜欢，早餐摊那期看了两遍。唯一的小建议是更新频率能不能再高一点，每周三和周六等得有点久。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a2">许</span><div><b>许一诺</b><br>注册用户 · 8 个月</div></div>
+        </article>
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★★</div>
+          <p>「我是在搜索一条本地新闻的时候找到这里的，本来只想看看热闹，结果看完了一整个专题。相比结论，他们更愿意把过程摆出来。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a4">赵</span><div><b>赵行舟</b><br>新用户</div></div>
+        </article>
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★★</div>
+          <p>「投稿过一次选题，编辑回复得很细致，虽然最后没被采用，但给了具体的修改建议。这种被认真对待的感觉，比什么都重要。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a6">宋</span><div><b>宋小满</b><br>社区投稿人</div></div>
+        </article>
+        <article class="gx-voice">
+          <div class="gx-stars">★★★★☆</div>
+          <p>「访谈类的节奏我特别喜欢，不抢话、不煽情。希望能多请一些普通的当事人，不只是行业里的专家。」</p>
+          <div class="gx-voice-who"><span class="gx-avatar gx-a5">李</span><div><b>李予安</b><br>注册用户 · 1 年</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + 动态 + 联系 -->
+  <section class="gx-section gx-support" id="gx-support">
+    <div class="gx-wrap">
+      <div class="gx-section-head">
+        <div>
+          <span class="gx-eyebrow">Support</span>
+          <h2 class="gx-h2">帮助中心 · 企业动态与联系方式</h2>
+        </div>
+        <p class="gx-lead">关于投稿、版权与合作的常见问题，这里都有答案。</p>
+      </div>
+      <div class="gx-support-grid">
+        <div class="gx-faq">
+          <h3>常见问题</h3>
+          <details open>
+            <summary>如何向每日吃瓜投稿选题或影像作品？</summary>
+            <p>可通过页面上方「我要投稿」入口提交。文字线索请说明时间、地点、涉及方与可核实的资料；影像作品建议提供 3 分钟以内的样片与完整素材说明。编辑部会在 5 个工作日内回复，采用与否都会给出理由。</p>
+          </details>
+          <details>
+            <summary>平台内容是否都为原创？素材来源如何标注？</summary>
+            <p>每日吃瓜的影像内容均为团队或签约创作者原创制作。涉及的第三方图片、音频与文献资料均按规范标注来源与获取时间，部分授权素材会在片尾统一致谢。如发现引用疏漏，可通过反馈入口告知，我们会及时更正。</p>
+          </details>
+          <details>
+            <summary>我想成为签约创作者，需要满足什么条件？</summary>
+            <p>我们更看重稳定的表达而非粉丝数量。通常需要有 3 部以上完整作品、明确的选题方向，以及可持续的更新计划。通过初筛后会进行一次线上沟通，讨论选题方向与制作规范，随后进入试用合作期。</p>
+          </details>
+          <details>
+            <summary>视频的画质与播放体验有哪些保障？</summary>
+            <p>平台内容统一采用高清标准制作与导出，支持多码率自适应播放。如遇到加载缓慢，可先检查网络环境；若问题持续，请通过反馈入口描述具体内容与设备信息，技术团队会跟进排查。</p>
+          </details>
+          <details>
+            <summary>如何参与社区投票与话题讨论？</summary>
+            <p>注册用户可在每期专题页参与投票，热度榜每周更新一次。讨论区鼓励基于事实的表达，涉及个人隐私、未经核实指控的内容将被移除。我们希望在社区里保留讨论的空间，也保留基本的边界。</p>
+          </details>
+          <details>
+            <summary>企业或品牌可以如何与每日吃瓜合作？</summary>
+            <p>我们提供联合企划、专题共创与内容授权等形式。合作内容需符合平台的选题标准与表达规范，不接受影响结论独立性的合作。具体可发送邮件至合作邮箱，说明合作方向与预期。</p>
+          </details>
+        </div>
+        <div>
+          <div class="gx-dyn">
+            <h3>企业动态 · 官方发布</h3>
+            <ul class="gx-timeline">
+              <li><b>「冬季话题观察计划」正式开启报名</b><small>2026年11月19日 · 社区运营</small></li>
+              <li><b>专题《热点背后》第一季上线，首周更新两期</b><small>2026年11月15日 · 内容中心</small></li>
+              <li><b>创作手册 2.0 版发布，新增信息核验章节</b><small>2026年11月06日 · 品牌官方</small></li>
+              <li><b>新增三位签约创作者，覆盖科普与户外领域</b><small>2026年10月28日 · 创作者计划</small></li>
+            </ul>
+          </div>
+          <div class="gx-contact">
+            <h3>联系我们</h3>
+            <p>选题线索、内容合作、版权事宜，欢迎随时来信。工作时间为周一至周五 10:00–19:00。</p>
+            <div class="gx-contact-row">
+              <button class="gx-btn gx-btn-primary" type="button" data-gx-open="submit">提交选题</button>
+              <button class="gx-btn gx-btn-light" type="button" data-gx-copy>复制联系邮箱</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作 -->
+  <section class="gx-partners">
+    <div class="gx-wrap">
+      <div class="gx-section-head" style="margin-bottom:18px;">
+        <div>
+          <span class="gx-eyebrow">Partners</span>
+          <h2 class="gx-h2" style="font-size:22px;">合作品牌与伙伴</h2>
+        </div>
+      </div>
+      <div class="gx-partner-row">
+        <span class="gx-partner">城市影像档案馆</span>
+        <span class="gx-partner">青禾书店</span>
+        <span class="gx-partner">南街社区中心</span>
+        <span class="gx-partner">拾光电台</span>
+        <span class="gx-partner">独立纪录片联盟</span>
+        <span class="gx-partner">晨间咖啡实验室</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="gx-footer">
+  <div class="gx-wrap">
+    <div class="gx-footer-grid">
+      <div>
+        <div class="gx-logo" style="margin-bottom:12px;">
+          <span class="gx-logo-mark">吃</span>
+          <span class="gx-logo-text">
+            <strong>每日吃瓜</strong>
+            <em>官方网站</em>
+          </span>
+        </div>
+        <p>每日吃瓜官方网站，专注热点解读与生活观察的原创视频品牌。坚持以真实、专业、正版的内容标准，为社区提供值得信赖的精品内容。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <a href="#gx-focus">焦点内容</a>
+        <a href="#gx-stream">精品内容</a>
+        <a href="#gx-special">专题企划</a>
+        <a href="#gx-creators">创作者矩阵</a>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <a href="#gx-about">品牌故事</a>
+        <a href="#gx-mixed">榜单与随笔</a>
+        <a href="#gx-support">企业动态</a>
+        <a href="#gx-support">帮助中心</a>
+      </div>
+      <div>
+        <h4>参与入口</h4>
+        <a href="#gx-support">投稿与选题</a>
+        <a href="#gx-support">合作联系</a>
+        <a href="#gx-support">提交反馈</a>
+        <a href="#gx-support">社区规范</a>
+      </div>
+    </div>
+    <div class="gx-footer-bottom">
+      <span>© 2019–2026 每日吃瓜品牌 版权所有 · 持续运营中</span>
+      <span>内容均为原创制作 · 企业信息与备案号：本页为品牌展示说明</span>
+    </div>
+  </div>
+</footer>
+
+<button class="gx-topbtn" id="gx-topbtn" type="button" aria-label="回到顶部">↑</button>
+
+<!-- 投稿/反馈弹窗 -->
+<div class="gx-modal" id="gx-modal" role="dialog" aria-modal="true" aria-labelledby="gx-modal-title">
+  <div class="gx-modal-box">
+    <h3 id="gx-modal-title">提交选题</h3>
+    <p id="gx-modal-desc">请简要描述线索或想反馈的问题，编辑部会在 5 个工作日内回复。</p>
+    <div class="gx-fieldrow">
+      <input type="text" id="gx-modal-name" placeholder="你的称呼" aria-label="你的称呼">
+      <textarea id="gx-modal-text" rows="4" placeholder="线索内容 / 反馈说明" aria-label="线索内容或反馈说明"></textarea>
+    </div>
+    <div class="gx-modal-foot">
+      <button class="gx-btn gx-btn-light" type="button" data-gx-close>取消</button>
+      <button class="gx-btn gx-btn-primary" type="button" id="gx-modal-send">提交</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者信息弹窗 -->
+<div class="gx-modal" id="gx-creator-modal" role="dialog" aria-modal="true" aria-labelledby="gx-creator-title">
+  <div class="gx-modal-box">
+    <h3 id="gx-creator-title">创作者信息</h3>
+    <p id="gx-creator-desc">暂无信息</p>
+    <div class="gx-modal-foot">
+      <button class="gx-btn gx-btn-primary" type="button" data-gx-close>知道了</button>
+    </div>
+  </div>
+</div>
+
+<div class="gx-toast" id="gx-toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== 移动端导航 ===== */
+  var burger = document.getElementById("gx-burger");
+  var mobilePanel = document.getElementById("gx-mobile-panel");
+  burger.addEventListener("click", function(){
+    var open = mobilePanel.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  mobilePanel.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      mobilePanel.classList.remove("is-open");
+      burger.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ===== Toast ===== */
+  var toast = document.getElementById("gx-toast");
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add("is-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove("is-show");
+    }, 2400);
+  }
+
+  /* ===== 搜索 ===== */
+  var searchInput = document.getElementById("gx-search-input");
+  var searchHint = document.getElementById("gx-search-hint");
+  var searchBtn = document.getElementById("gx-search-btn");
+
+  function runSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      showToast("请输入想了解的话题或创作者名称");
+      return;
+    }
+    var found = false;
+    var cards = document.querySelectorAll("#gx-cardgrid .gx-card");
+    cards.forEach(function(card){
+      var txt = card.textContent;
+      var hit = txt.indexOf(q) > -1;
+      card.setAttribute("data-hidden", hit ? "0" : "1");
+      if(hit) found = true;
+    });
+    if(found){
+      showToast("已为你筛选包含「" + q + "」的内容");
+      document.getElementById("gx-stream").scrollIntoView({behavior:"smooth"});
+    }else{
+      showToast("暂无匹配内容，已保留全部结果，试试其他关键词");
+      cards.forEach(function(card){ card.setAttribute("data-hidden","0"); });
+    }
+    searchHint.classList.remove("is-open");
+  }
+  searchBtn.addEventListener("click", runSearch);
+  searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){ e.preventDefault(); runSearch(); }
+  });
+  searchInput.addEventListener("focus", function(){
+    if(searchInput.value.trim() === "") searchHint.classList.add("is-open");
+  });
+  document.addEventListener("click", function(e){
+    if(!document.getElementById("gx-search").contains(e.target)){
+      searchHint.classList.remove("is-open");
+    }
+  });
+  searchHint.addEventListener("click", function(e){
+    if(e.target.tagName === "A") searchHint.classList.remove("is-open");
+  });
+
+  /* ===== 标签筛选 ===== */
+  var filterbar = document.getElementById("gx-filterbar");
+  filterbar.addEventListener("click", function(e){
+    var btn = e.target.closest(".gx-chip");
+    if(!btn) return;
+    filterbar.querySelectorAll(".gx-chip").forEach(function(c){
+      c.classList.remove("is-active");
+    });
+    btn.classList.add("is-active");
+    var key = btn.getAttribute("data-gx-filter");
+    document.querySelectorAll("#gx-cardgrid .gx-card").forEach(function(card){
+      if(key === "all"){ card.setAttribute("data-hidden","0"); return; }
+      var cat = card.getAttribute("data-gx-cat") || "";
+      card.setAttribute("data-hidden", cat === key ? "0" : "1");
+    });
+  });
+
+  /* ===== 点赞 & 收藏 ===== */
+  function parseNum(str){
+    if(!str) return 0;
+    str = str.replace(/,/g,"");
+    if(/k$/i.test(str)) return Math.round(parseFloat(str) * 1000);
+    return parseInt(str, 10) || 0;
+  }
+  function fmt(n){
+    if(n >= 1000) return (n/1000).toFixed(1).replace(/\.0$/,"") + "k";
+    return String(n);
+  }
+
+  document.addEventListener("click", function(e){
+    var likeBtn = e.target.closest("[data-gx-like]");
+    if(likeBtn){
+      var span = likeBtn.querySelector("span");
+      var cur = parseNum(span.textContent);
+      if(likeBtn.classList.toggle("is-on")){
+        cur += 1;
+        showToast("已点赞，感谢你的支持");
+      }else{
+        cur = Math.max(0, cur - 1);
+      }
+      span.textContent = fmt(cur);
+      likeBtn.setAttribute("aria-pressed", likeBtn.classList.contains("is-on") ? "true" : "false");
+      return;
+    }
+
+    var favBtn = e.target.closest("[data-gx-fav]");
+    if(favBtn){
+      var on = favBtn.classList.toggle("is-on");
+      favBtn.querySelector("svg").setAttribute("fill", on ? "currentColor" : "none");
+      showToast(on ? "已加入收藏，稍后可在个人中心查看" : "已取消收藏");
+      return;
+    }
+
+    var copyBtn = e.target.closest("[data-gx-copy]");
+    if(copyBtn){
+      var mail = "contact@meirichigua-brand.cn";
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(mail).then(function(){
+          showToast("联系邮箱已复制：" + mail);
+        }).catch(function(){
+          showToast("联系邮箱：" + mail);
+        });
+      }else{
+        showToast("联系邮箱：" + mail);
+      }
+      return;
+    }
+
+    var creatorBtn = e.target.closest("[data-gx-creator]");
+    if(creatorBtn){
+      var parts = creatorBtn.getAttribute("data-gx-creator").split("|");
+      document.getElementById("gx-creator-title").textContent = parts[0];
+      document.getElementById("gx-creator-desc").textContent = parts[1] || "";
+      document.getElementById("gx-creator-modal").classList.add("is-open");
+      return;
+    }
+
+    var openBtn = e.target.closest("[data-gx-open]");
+    if(openBtn){
+      var mode = openBtn.getAttribute("data-gx-open");
+      document.getElementById("gx-modal-title").textContent = (mode === "feedback") ? "提交反馈" : "提交选题";
+      document.getElementById("gx-modal-desc").textContent = (mode === "feedback")
+        ? "描述你遇到的问题或对平台的建议，我们会认真阅读每一条反馈。"
+        : "请简要描述线索或想反馈的问题，编辑部会在 5 个工作日内回复。";
+      document.getElementById("gx-modal").classList.add("is-open");
+      return;
+    }
+
+    if(e.target.closest("[data-gx-close]")){
+      document.querySelectorAll(".gx-modal.is-open").forEach(function(m){
+        m.classList.remove("is-open");
+      });
+    }
+  });
+
+  document.querySelectorAll(".gx-modal").forEach(function(m){
+    m.addEventListener("click", function(e){
+      if(e.target === m) m.classList.remove("is-open");
+    });
+  });
+
+  document.getElementById("gx-modal-send").addEventListener("click", function(){
+    var name = document.getElementById("gx-modal-name").value.trim();
+    var text = document.getElementById("gx-modal-text").value.trim();
+    if(!text){
+      showToast("请填写线索内容或反馈说明");
+      return;
+    }
+    document.getElementById("gx-modal").classList.remove("is-open");
+    document.getElementById("gx-modal-name").value = "";
+    document.getElementById("gx-modal-text").value = "";
+    showToast((name ? name + "，" : "") + "已收到你的提交，编辑部会尽快回复");
+  });
+
+  /* ===== 回到顶部 ===== */
+  var topBtn = document.getElementById("gx-topbtn");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 420){
+      topBtn.classList.add("is-show");
+    }else{
+      topBtn.classList.remove("is-show");
+    }
+  }, {passive:true});
+  topBtn.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* ===== 数字滚动 ===== */
+  var counters = document.querySelectorAll("[data-gx-count]");
+  var started = false;
+  function animateCounters(){
+    if(started) return;
+    started = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-gx-count"), 10) || 0;
+      var start = 0;
+      var dur = 1200;
+      var t0 = null;
+      function step(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(start + (target - start) * eased).toLocaleString("zh-CN");
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateCounters(); io.disconnect(); }
+      });
+    }, {threshold:.35});
+    io.observe(document.querySelector(".gx-hero-stats"));
+  }else{
+    animateCounters();
+  }
+
+})();
+</script>
+</body>
+  </html>
